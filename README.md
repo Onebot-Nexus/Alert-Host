@@ -1,4 +1,4 @@
 # Alert-Host
-Notifies the host using an audible alert on the host computer.
+Notifies the host using the notification system built into the host machine.
 
-Requires the Node.js module `play-sound`.
+Requires the Node.js module `node-notifier`.
