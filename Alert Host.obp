@@ -1,17 +1,17 @@
-var player = require('play-sound')(opts = {})
+const notifier = require('node-notifier');
 exports.onMessageReceived = (function Version(bot, doc, user, userID, channelID, message, event) {
     if(message === undefined){
         return;
     }
     if (message === "*alerthost" || message === "*hostalert") {
-        player.play('alert.mp3', function(err){}) // $ mplayer foo.mp3  
+        notifier.notify("Someone notified you!");
         bot.sendMessage({
             to: doc.logchannel,
             message: user + " alerted the host."
         });
         bot.sendMessage({
             to: channelID,
-            message: "I have alerted the host using an audible alert."
+            message: "I have alerted the host."
         });
     }
 });
